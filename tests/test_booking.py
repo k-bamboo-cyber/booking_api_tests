@@ -21,9 +21,8 @@ class TestBooking:
             3. Validate schema
         """
 
-        client.booking.create_booking(data)
-        # data = BookingData().random()
-        # res = client.create_booking(data)
-        # assert res.status_code == 200
-        # booking_info = res.json()
-        # assert booking_info.get('booking') == data
+        data = BookingData().random()
+        res = client.create_booking(data)
+        assert res.status_code == 200
+        booking_info = res.json()
+        assert booking_info.get('booking') == data
